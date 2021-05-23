@@ -1,0 +1,54 @@
+﻿@page
+@model Diakok.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Diak[0].Nev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diak[0].Evfolyam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diak[0].Szul_datum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diak[0].Telefon)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Diak) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nev)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evfolyam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Szul_datum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DiakID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DiakID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DiakID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
