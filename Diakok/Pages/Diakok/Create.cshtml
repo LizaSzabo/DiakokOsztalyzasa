@@ -15,17 +15,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Diak.Nev" class="control-label"></label>
-                <input asp-for="Diak.Nev" class="form-control" />
+                <input asp-for="Diak.Nev" class="form-control" required/>
                 <span asp-validation-for="Diak.Nev" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Diak.Evfolyam" class="control-label"></label>
-                <input asp-for="Diak.Evfolyam" class="form-control" />
+                <input asp-for="Diak.Evfolyam" class="form-control" min="1"/>
                 <span asp-validation-for="Diak.Evfolyam" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Diak.Szul_datum" class="control-label"></label>
-                <input asp-for="Diak.Szul_datum" class="form-control" />
+                <input asp-for="Diak.Szul_datum" class="form-control" type ="date" />
                 <span asp-validation-for="Diak.Szul_datum" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -17,20 +17,15 @@ namespace Diakok.DAL
         public DiakDbContext()
           : base()
         {
-            LoadData();
+          
         }
 
         public DiakDbContext(DbContextOptions options)
             : base(options)
         {
-            LoadData();
+           
         }
 
-        public void LoadData()
-        {
-            Diak diak = new Diak() { Nev = "Teeeeeeszzzt"};
-            Diakok.Add(diak);
-        }
 
         public List<Diak> GetDiak()
         {

@@ -14,16 +14,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Diak[0].Nev)
+               Név
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Diak[0].Evfolyam)
+               Évfolyam
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Diak[0].Szul_datum)
+              Születési dátum
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Diak[0].Telefon)
+              Telefon
             </th>
             <th></th>
         </tr>
@@ -44,9 +44,10 @@
                 @Html.DisplayFor(modelItem => item.Telefon)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.DiakID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.DiakID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.DiakID">Delete</a>
+                @Html.DisplayFor(modelItem => item.Osztalyzatok[0].Ertek)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DiakID">Osztalyzat hozzáadása</a>
             </td>
         </tr>
 }

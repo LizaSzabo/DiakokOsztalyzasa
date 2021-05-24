@@ -31,12 +31,14 @@ namespace Diakok.Pages.Diakok
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
             _context.Diakok.Add(Diak);
+          
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

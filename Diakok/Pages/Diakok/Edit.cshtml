@@ -13,36 +13,25 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Diak.DiakID" />
             <div class="form-group">
-                <label asp-for="Diak.Nev" class="control-label"></label>
-                <input asp-for="Diak.Nev" class="form-control" />
-                <span asp-validation-for="Diak.Nev" class="text-danger"></span>
+                <label asp-for="Diak.Osztalyzatok[Model.Diak.Szul_datum.Length].Ertek" class="control-label"></label>
+                <input asp-for="Diak.Osztalyzatok[Model.Diak.Szul_datum.Length].Ertek" class="form-control" required />
+                <span asp-validation-for="Diak.Osztalyzatok[Model.Diak.Szul_datum.Length].Ertek" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Diak.Evfolyam" class="control-label"></label>
-                <input asp-for="Diak.Evfolyam" class="form-control" />
-                <span asp-validation-for="Diak.Evfolyam" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Diak.Szul_datum" class="control-label"></label>
-                <input asp-for="Diak.Szul_datum" class="form-control" />
-                <span asp-validation-for="Diak.Szul_datum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Diak.Telefon" class="control-label"></label>
-                <input asp-for="Diak.Telefon" class="form-control" />
-                <span asp-validation-for="Diak.Telefon" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="hidden" asp-for="Diak.DiakID" />
+                <input type="hidden" asp-for="Diak.Nev" />
+                <input type="hidden" asp-for="Diak.Evfolyam" />
+                <input type="hidden" asp-for="Diak.Szul_datum" />
+                <input type="hidden" asp-for="Diak.Telefon" />
+                <input type="submit" value="Add" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

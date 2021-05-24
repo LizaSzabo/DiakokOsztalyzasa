@@ -17,8 +17,7 @@ namespace Diakok.Pages.Diakok
         public IndexModel(DiakDbContext context)
         {
             _context = context;
-           _context.Database.EnsureDeleted();
-            _context.Database.EnsureCreated();
+          
            // DiakDbContextSeeder.Seed(_context);
           
         }
@@ -27,7 +26,7 @@ namespace Diakok.Pages.Diakok
 
         public async Task OnGetAsync()
         {
-            Diak = _context.GetDiak();
+            Diak = await _context.Diakok.ToListAsync();
             Diak = Diak.OrderBy(o => o.Nev).ToList();
         }
     }
