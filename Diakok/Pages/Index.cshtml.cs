@@ -15,6 +15,7 @@ namespace Diakok.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+            RedirectToPage(".Diakok/Index");
         }
 
         public void OnGet()

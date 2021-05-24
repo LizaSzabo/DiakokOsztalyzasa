@@ -1,5 +1,4 @@
-﻿using Diakok.Model;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -27,12 +26,12 @@ namespace Diakok.DAL
         }
 
 
-        public List<Diak> GetDiak()
+        public List<DbDiak> GetDiak()
         {
-            return Diakok.Local.ToList<Diak>();
+            return Diakok.Local.ToList<DbDiak>();
         }
 
-        public DbSet<Model.Diak> Diakok { get; set; }
-        public DbSet<Model.Osztalyzat> Osztalyzatok { get; set; }
+        public DbSet<DbDiak> Diakok { get; set; }
+        public DbSet<DbOsztalyzat> Osztalyzatok { get; set; }
     }
 }

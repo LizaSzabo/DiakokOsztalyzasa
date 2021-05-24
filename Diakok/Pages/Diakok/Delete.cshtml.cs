@@ -29,7 +29,7 @@ namespace Diakok.Pages.Diakok
                 return NotFound();
             }
 
-            Diak = await _context.Diakok.FirstOrDefaultAsync(m => m.DiakID == id);
+            //Diak = await _context.Diakok.FirstOrDefaultAsync(m => m.DiakID == id);
 
             if (Diak == null)
             {
@@ -45,11 +45,11 @@ namespace Diakok.Pages.Diakok
                 return NotFound();
             }
 
-            Diak = await _context.Diakok.FindAsync(id);
+          //  Diak = await _context.Diakok.FindAsync(id);
 
             if (Diak != null)
             {
-                _context.Diakok.Remove(Diak);
+               // _context.Diakok.Remove(Diak);
                 await _context.SaveChangesAsync();
             }
 

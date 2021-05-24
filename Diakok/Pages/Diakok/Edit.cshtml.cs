@@ -13,24 +13,26 @@ namespace Diakok.Pages.Diakok
 {
     public class EditModel : PageModel
     {
-        private readonly DiakDbContext _context;
+        private readonly IRepository repository;
 
-        public EditModel(DiakDbContext context)
+        public EditModel(IRepository repository)
         {
-            _context = context;
+            this.repository = repository;
         }
 
         [BindProperty]
         public Diak Diak { get; set; }
+        [BindProperty]
+        public Osztalyzat Osztalyzat { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(long? id)
+        public async Task<IActionResult> OnGetAsync(long id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Diak = await _context.Diakok.FirstOrDefaultAsync(m => m.DiakID == id);
+            Diak = repository.FindDiak(id);
 
             if (Diak == null)
             {
@@ -48,30 +50,13 @@ namespace Diakok.Pages.Diakok
                 return Page();
             }
 
-            _context.Attach(Diak).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DiakExists(Diak.DiakID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+           repository.AddOsztalyzat(Diak.DiakID, Osztalyzat.Ertek);
+        
+           return RedirectToPage("./Index");
 
-            return RedirectToPage("./Index");
         }
 
-        private bool DiakExists(long id)
-        {
-            return _context.Diakok.Any(e => e.DiakID == id);
-        }
+
     }
 }

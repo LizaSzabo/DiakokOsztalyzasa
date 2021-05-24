@@ -12,11 +12,11 @@ namespace Diakok.Pages.Diakok
 {
     public class CreateModel : PageModel
     {
-        private readonly DiakDbContext _context;
+        private readonly IRepository repository;
 
-        public CreateModel(DiakDbContext context)
+        public CreateModel(IRepository repository)
         {
-            _context = context;
+            this.repository = repository;
         }
 
         public IActionResult OnGet()
@@ -37,9 +37,12 @@ namespace Diakok.Pages.Diakok
                 return Page();
             }
 
-            _context.Diakok.Add(Diak);
-          
-            await _context.SaveChangesAsync();
+           
+            /*new_diak.Osztalyzatok = new List<Osztalyzat>();
+            new_diak.Osztalyzatok.Add(new Osztalyzat {  Ertek = 7, Diak = Diak, DiakId = Diak.DiakID  });*/
+            //  _context.Diakok.Add(new_diak);
+
+            repository.InsertDiak(Diak);
 
             return RedirectToPage("./Index");
         }

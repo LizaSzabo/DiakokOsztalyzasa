@@ -5,25 +5,25 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Diákok Listája</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Új diák létrehozása</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-               Név
+                Név
             </th>
             <th>
-               Évfolyam
+                Évfolyam
             </th>
             <th>
-              Születési dátum
+                Születési dátum
             </th>
             <th>
-              Telefon
+                Telefon
             </th>
             <th></th>
         </tr>
@@ -42,9 +42,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Telefon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Osztalyzatok[0].Ertek)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.DiakID">Osztalyzat hozzáadása</a>

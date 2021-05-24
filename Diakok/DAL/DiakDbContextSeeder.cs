@@ -12,27 +12,6 @@ namespace Diakok.DAL
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
-            context.Diakok.Add(new Model.Diak()
-            {
-               Nev = "Teszt Diák5"
-               
-            });
-
-            context.Diakok.Add(new Model.Diak()
-            {
-                Nev = "Teszt Diák3"
-            });
-
-            context.Diakok.Add(new Model.Diak()
-            {
-                Nev = "Teszt Diák"
-            });
-
-            context.Diakok.Add(new Model.Diak()
-            {
-                Nev = "Teszt Diák1"
-            });
-
           
         }
     }

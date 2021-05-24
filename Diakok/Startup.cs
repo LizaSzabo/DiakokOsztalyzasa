@@ -26,9 +26,11 @@ namespace Diakok
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
             services.AddDbContext<DiakDbContext>(opt => opt.UseInMemoryDatabase(databaseName: "Diakok"));
-            services.AddScoped<DiakDbContext>();
-
+     
+            services.AddScoped<DAL.IRepository, DAL.Repository>();
+        
 
             services.AddMvc();
             services.AddRazorPages();

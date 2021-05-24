@@ -12,22 +12,24 @@ namespace Diakok.Pages.Diakok
 {
     public class IndexModel : PageModel
     {
-        private readonly DiakDbContext _context;
+        private readonly IRepository repository;
 
-        public IndexModel(DiakDbContext context)
+        public IndexModel(IRepository repository)
         {
-            _context = context;
-          
-           // DiakDbContextSeeder.Seed(_context);
-          
+            this.repository = repository;
         }
 
-        public List<Diak> Diak { get;set; }
+        public IList<Diak> Diak { get;set; }
+        public IList<Osztalyzat> Osztalyzat{ get; set; }
 
-        public async Task OnGetAsync()
+        public void OnGetAsync()
         {
-            Diak = await _context.Diakok.ToListAsync();
+            Diak = repository.ListStudents();
             Diak = Diak.OrderBy(o => o.Nev).ToList();
+            Osztalyzat = repository.ListOsztalyzatok();
+            if(Osztalyzat.Count > 0)
+                foreach(var oszt in Osztalyzat)
+                     System.Diagnostics.Debug.WriteLine(oszt.Ertek);
         }
     }
 }

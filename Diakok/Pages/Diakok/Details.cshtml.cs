@@ -19,22 +19,12 @@ namespace Diakok.Pages.Diakok
             _context = context;
         }
 
-        public Diak Diak { get; set; }
+        public List<Diak> Diak { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(long? id)
+        public async Task OnGetAsync()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            Diak = await _context.Diakok.FirstOrDefaultAsync(m => m.DiakID == id);
-
-            if (Diak == null)
-            {
-                return NotFound();
-            }
-            return Page();
+          //  Diak = await _context.Diakok.ToListAsync();
+            Diak = Diak.OrderBy(o => o.Nev).ToList();
         }
     }
 }
