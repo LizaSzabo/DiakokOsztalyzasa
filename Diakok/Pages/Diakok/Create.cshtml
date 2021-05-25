@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Diak.Evfolyam" class="control-label"></label>
-                <input asp-for="Diak.Evfolyam" class="form-control" min="1"/>
+                <input asp-for="Diak.Evfolyam" class="form-control" min="1" max="13"/>
                 <span asp-validation-for="Diak.Evfolyam" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Diak.Telefon" class="control-label"></label>
-                <input asp-for="Diak.Telefon" class="form-control" />
+                <input asp-for="Diak.Telefon" class="form-control" type ="number" maxlength="15" minlength="4" />
                 <span asp-validation-for="Diak.Telefon" class="text-danger"></span>
             </div>
             <div class="form-group">

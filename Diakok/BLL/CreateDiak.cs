@@ -19,7 +19,7 @@ namespace Diakok.BLL
 
         public bool AddDiak(Diak diak)
         {
-            if (diak != null && diak.Nev != null)
+            if (diak != null && diak.Nev != null && diak.Nev != "" && diak.Evfolyam > 0)
             {
                 repository.InsertDiak(diak);
                 return true;
