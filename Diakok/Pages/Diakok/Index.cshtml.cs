@@ -27,9 +27,12 @@ namespace Diakok.Pages.Diakok
             Diak = repository.ListStudents();
             Diak = Diak.OrderBy(o => o.Nev).ToList();
             Osztalyzat = repository.ListOsztalyzatok();
-            if(Osztalyzat.Count > 0)
-                foreach(var oszt in Osztalyzat)
-                     System.Diagnostics.Debug.WriteLine(oszt.Ertek);
+            if (Osztalyzat.Count > 0)
+            {
+                System.Diagnostics.Debug.WriteLine("dkbsdkvk");
+                foreach (var oszt in Osztalyzat)
+                    System.Diagnostics.Debug.WriteLine(oszt.DiakId);
+            }
         }
     }
 }

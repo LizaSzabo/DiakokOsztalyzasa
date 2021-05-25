@@ -1,5 +1,5 @@
 ﻿@page
-@model Diakok.DetailsModel
+@model Diakok.StatisticsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -28,25 +28,23 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Diak)
+        @foreach (var item in Model.Statisztika)
         {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nev)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Evfolyam)
+                    @Html.DisplayFor(modelItem => item.Atlag)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Szul_datum)
+                    @Html.DisplayFor(modelItem => item.ElegtelenekSzama)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Telefon)
+                    @Html.DisplayFor(modelItem => item.Legjobb)
                 </td>
                
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.DiakID">Osztalyzat hozzáadása</a>
-                </td>
+               
             </tr>
         }
     </tbody>

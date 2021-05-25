@@ -7,24 +7,28 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Diakok.DAL;
 using Diakok.Model;
+using Diakok.BLL;
 
 namespace Diakok.Pages.Diakok
 {
-    public class DetailsModel : PageModel
+    public class StatisticsModel : PageModel
     {
-        private readonly DiakDbContext _context;
+        private readonly CreateStatistics createStatistics;
 
-        public DetailsModel(DiakDbContext context)
+        public StatisticsModel(IRepository repository)
         {
-            _context = context;
+            createStatistics = new CreateStatistics(repository);
         }
 
-        public List<Diak> Diak { get; set; }
+        [BindProperty]
+        public List<DiakStatisztika> Statisztika { get; set; }
 
         public async Task OnGetAsync()
         {
-          //  Diak = await _context.Diakok.ToListAsync();
-            Diak = Diak.OrderBy(o => o.Nev).ToList();
+            Statisztika = new List<DiakStatisztika>();
+            
+            Statisztika = createStatistics.ListAllStatistics();
+           /* Statisztika = Statisztika.OrderBy(o => o.Atlag).ToList();*/
         }
     }
 }
