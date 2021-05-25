@@ -160,7 +160,6 @@ C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\
 C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Diakok.TagHelpers.output.cache
 C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Diakok.RazorCoreGenerate.cache
 C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Razor\Pages\Diakok\Create.cshtml.g.cs
-C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Razor\Pages\Diakok\Delete.cshtml.g.cs
 C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Razor\Pages\Diakok\Details.cshtml.g.cs
 C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Razor\Pages\Diakok\Edit.cshtml.g.cs
 C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Razor\Pages\Diakok\Index.cshtml.g.cs

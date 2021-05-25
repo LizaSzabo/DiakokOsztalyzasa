@@ -27,7 +27,6 @@ namespace Diakok.BLL
             Diakok = repository.ListStudents();
             Osztalyzatok = repository.ListOsztalyzatok();
 
-           
 
             int osztalyzat_value = 0;
             int osztalyzat_count = 0;

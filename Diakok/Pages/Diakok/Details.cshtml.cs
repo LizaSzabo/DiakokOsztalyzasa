@@ -28,7 +28,6 @@ namespace Diakok.Pages.Diakok
             Statisztika = new List<DiakStatisztika>();
             
             Statisztika = createStatistics.ListAllStatistics();
-           /* Statisztika = Statisztika.OrderBy(o => o.Atlag).ToList();*/
         }
     }
 }

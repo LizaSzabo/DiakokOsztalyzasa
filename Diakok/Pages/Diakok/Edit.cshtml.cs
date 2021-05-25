@@ -8,17 +8,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Diakok.DAL;
 using Diakok.Model;
+using Diakok.BLL;
 
 namespace Diakok.Pages.Diakok
 {
     public class EditModel : PageModel
     {
-        private readonly IRepository repository;
+        private readonly CreateOsztalyzat createOsztalyzat;
 
         public EditModel(IRepository repository)
         {
-            this.repository = repository;
+            createOsztalyzat = new CreateOsztalyzat(repository);
         }
+
 
         [BindProperty]
         public Diak Diak { get; set; }
@@ -27,12 +29,8 @@ namespace Diakok.Pages.Diakok
 
         public async Task<IActionResult> OnGetAsync(long id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            Diak = repository.FindDiak(id);
+            Diak = createOsztalyzat.FindDiakById(id);
 
             if (Diak == null)
             {
@@ -41,8 +39,6 @@ namespace Diakok.Pages.Diakok
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -50,8 +46,7 @@ namespace Diakok.Pages.Diakok
                 return Page();
             }
 
-
-           repository.AddOsztalyzat(Diak.DiakID, Osztalyzat.Ertek);
+            createOsztalyzat.AddOsztalyzat(Diak.DiakID, Osztalyzat.Ertek);
         
            return RedirectToPage("./Index");
 

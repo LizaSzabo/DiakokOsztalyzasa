@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Diakok.DAL;
 using Diakok.Model;
+using Diakok.BLL;
 
 namespace Diakok.Pages.Diakok
 {
     public class CreateModel : PageModel
     {
-        private readonly IRepository repository;
+        private readonly CreateDiak createDiak;
 
         public CreateModel(IRepository repository)
         {
-            this.repository = repository;
+            createDiak = new CreateDiak(repository);
         }
 
         public IActionResult OnGet()
@@ -27,8 +28,6 @@ namespace Diakok.Pages.Diakok
         [BindProperty]
         public Diak Diak { get; set; }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             
@@ -37,12 +36,7 @@ namespace Diakok.Pages.Diakok
                 return Page();
             }
 
-           
-            /*new_diak.Osztalyzatok = new List<Osztalyzat>();
-            new_diak.Osztalyzatok.Add(new Osztalyzat {  Ertek = 7, Diak = Diak, DiakId = Diak.DiakID  });*/
-            //  _context.Diakok.Add(new_diak);
-
-            repository.InsertDiak(Diak);
+            createDiak.AddDiak(Diak);
 
             return RedirectToPage("./Index");
         }
