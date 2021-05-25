@@ -22,7 +22,7 @@ namespace Diakok.Pages.Diakok
 
         public IList<Diak> Diak { get;set; }
 
-        public void OnGetAsync()
+        public void OnGet()
         {
             Diak = listDiakok.ListAllStudents();
         }

@@ -23,7 +23,7 @@ namespace Diakok.Pages.Diakok
         [BindProperty]
         public List<DiakStatisztika> Statisztika { get; set; }
 
-        public async Task OnGetAsync()
+        public void OnGet()
         {
             Statisztika = new List<DiakStatisztika>();
             

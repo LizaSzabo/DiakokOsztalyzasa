@@ -27,7 +27,7 @@ namespace Diakok.Pages.Diakok
         [BindProperty]
         public Osztalyzat Osztalyzat { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(long id)
+        public IActionResult OnGet(long id)
         {
 
             Diak = createOsztalyzat.FindDiakById(id);
@@ -39,7 +39,7 @@ namespace Diakok.Pages.Diakok
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
@@ -47,8 +47,9 @@ namespace Diakok.Pages.Diakok
             }
 
             createOsztalyzat.AddOsztalyzat(Diak.DiakID, Osztalyzat.Ertek);
-        
-           return RedirectToPage("./Index");
+
+
+            return RedirectToPage("./Index");
 
         }
 

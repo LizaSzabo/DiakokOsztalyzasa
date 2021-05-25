@@ -28,7 +28,7 @@ namespace Diakok.Pages.Diakok
         [BindProperty]
         public Diak Diak { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             
             if (!ModelState.IsValid)
