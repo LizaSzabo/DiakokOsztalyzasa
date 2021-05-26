@@ -11,27 +11,27 @@ using System.Threading.Tasks;
 
 namespace Diakok.DAL
 {
-    public class DiakDbContext: DbContext
+    public class StudentDbContext: DbContext
     {
-        public DiakDbContext()
+        public StudentDbContext()
           : base()
         {
           
         }
 
-        public DiakDbContext(DbContextOptions options)
+        public StudentDbContext(DbContextOptions options)
             : base(options)
         {
            
         }
 
 
-        public List<DbDiak> GetDiak()
+        public List<DbStudent> GetStudent()
         {
-            return Diakok.Local.ToList<DbDiak>();
+            return Students.Local.ToList<DbStudent>();
         }
 
-        public DbSet<DbDiak> Diakok { get; set; }
-        public DbSet<DbOsztalyzat> Osztalyzatok { get; set; }
+        public DbSet<DbStudent> Students { get; set; }
+        public DbSet<DbMark> Marks{ get; set; }
     }
 }

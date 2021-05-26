@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Diakok.DAL
 {
-    public class DbOsztalyzat
+    public class DbMark
     {
         public int id{ get; set; }
 
-        public int Ertek { get; set; }
-        public long DiakId { get; set; }
-        public virtual DbDiak Diak { get; set; }
+        public int Value { get; set; }
+        public long StudentId { get; set; }
+        public virtual DbStudent Student { get; set; }
 }
 }

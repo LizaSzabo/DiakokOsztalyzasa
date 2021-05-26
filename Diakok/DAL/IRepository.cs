@@ -8,10 +8,10 @@ namespace Diakok.DAL
 {
     public interface IRepository
     {
-        IList<Diak> ListStudents();
-        IList<Osztalyzat> ListOsztalyzatok();
-        Diak InsertDiak(Diak value);
-        Diak AddOsztalyzat(long diakId, int ertek);
-        Diak FindDiak(long id);
+        IList<Student> ListStudents();
+        IList<Mark> ListMarks();
+        Student InsertStudent(Student value);
+        Student AddMark(long StudentId, int value);
+        Student FindStudent(long id);
     }
 }

@@ -7,24 +7,24 @@
 
 <h1>Osztályzat hozzáadás</h1>
 
-<h4>@Model.Diak.Nev</h4>
+<h2>@Model.Student.Name</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Osztalyzat.Ertek"  class="control-label"></label>
-                <input asp-for="Osztalyzat.Ertek" class="form-control" required min="1" max="5" />
-                <span asp-validation-for="Osztalyzat.Ertek" class="text-danger"></span>
+                <label asp-for="Mark.Value"  class="control-label">Érték:</label>
+                <input asp-for="Mark.Value" class="form-control" required min="1" max="5" />
+                <span asp-validation-for="Mark.Value" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="hidden" asp-for="Diak.DiakID" />
-                <input type="hidden" asp-for="Diak.Nev" />
-                <input type="hidden" asp-for="Diak.Evfolyam" />
-                <input type="hidden" asp-for="Diak.Szul_datum" />
-                <input type="hidden" asp-for="Diak.Telefon" />
-                <input type="hidden" asp-for="Osztalyzat.Ertek" />
+                <input type="hidden" asp-for="Student.StudentID" />
+                <input type="hidden" asp-for="Student.Name" />
+                <input type="hidden" asp-for="Student.Grade" />
+                <input type="hidden" asp-for="Student.BirthDate" />
+                <input type="hidden" asp-for="Student.Phone" />
+                <input type="hidden" asp-for="Mark.Value" />
                 <input type="submit" value="Add" class="btn btn-primary" />
             </div>
         </form>
@@ -32,7 +32,7 @@
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Vissza a diákok listájához</a>
 </div>
 
 

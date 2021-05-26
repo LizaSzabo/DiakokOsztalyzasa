@@ -9,48 +9,48 @@ namespace Diakok.DAL
 {
     public class Repository:  IRepository
     {
-        private readonly DiakDbContext db;
+        private readonly StudentDbContext db;
 
-        public Repository(DiakDbContext db)
+        public Repository(StudentDbContext db)
         {
             this.db = db;
         }
 
-        public IList<Model.Diak> ListStudents()
+        public IList<Student> ListStudents()
         {
-            return db.Diakok.Select(ToModel).ToList();
+            return db.Students.Select(ToModel).ToList();
         }
 
-        public IList<Model.Osztalyzat> ListOsztalyzatok()
+        public IList<Mark> ListMarks()
         {
-            return db.Osztalyzatok.Select(ToModelOsztalyzat).ToList();
+            return db.Marks.Select(ToModelMark).ToList();
         }
 
-        public Model.Diak InsertDiak(Model.Diak value)
+        public Student InsertStudent(Student value)
         {
-              DbDiak toInsert;
-                toInsert = new DbDiak() { Nev = value.Nev, Evfolyam = value.Evfolyam, Szul_datum = value.Szul_datum, Telefon = value.Telefon };
-                db.Diakok.Add(toInsert);
+                DbStudent toInsert;
+                toInsert = new DbStudent() { Name = value.Name, Grade = value.Grade, BirthDate = value.BirthDate, Phone = value.Phone };
+                db.Students.Add(toInsert);
 
                 db.SaveChanges();
             
 
-                return new Model.Diak(toInsert.id, toInsert.Nev, toInsert.Evfolyam, value.Szul_datum, value.Telefon);
+                return new Student(toInsert.id, toInsert.Name, toInsert.Grade, value.BirthDate, value.Phone);
             
         }
 
 
-        public Model.Diak AddOsztalyzat(long diakId, int ertek)
+        public Student AddMark(long studentId, int value)
         {
            
-                var dbRecord = db.Diakok.FirstOrDefault(d => d.id == diakId);
+                var dbRecord = db.Students.FirstOrDefault(d => d.id == studentId);
                 if (dbRecord == null) return null;
                 else
                 {
                     
-                        var toInsertOsztalyzat = new DbOsztalyzat() { Ertek = ertek, Diak = dbRecord, DiakId = diakId };
-                        db.Osztalyzatok.Add(toInsertOsztalyzat);
-                        dbRecord.Osztalyzatok.Add(toInsertOsztalyzat);
+                        var toInsertOsztalyzat = new DbMark() { Value = value, Student = dbRecord, StudentId = studentId };
+                        db.Marks.Add(toInsertOsztalyzat);
+                        dbRecord.Marks.Add(toInsertOsztalyzat);
                    
                     db.SaveChanges();
 
@@ -59,31 +59,31 @@ namespace Diakok.DAL
             }
         }
 
-        public Model.Diak FindDiak(long id)
+        public Student FindStudent(long id)
         {
-            var dbDiak = db.Diakok.FirstOrDefault(d => d.id == id);
+            var dbStudent = db.Students.FirstOrDefault(d => d.id == id);
                         
-            if (dbDiak != null)
+            if (dbStudent != null)
             {
-                return ToModel(dbDiak);
+                return ToModel(dbStudent);
 
             }
             else return null;
         }
 
-        public Model.Diak ToModel(DbDiak value)
+        public Student ToModel(DbStudent value)
         {
            
-                var osztalyzatok = db.Osztalyzatok.FirstOrDefault(o => o.DiakId == value.id);
+                var osztalyzatok = db.Marks.FirstOrDefault(o => o.StudentId == value.id);
 
-                return new Model.Diak(value.id, value.Nev, value.Evfolyam, value.Szul_datum, value.Telefon);
+                return new Student(value.id, value.Name, value.Grade, value.BirthDate, value.Phone);
             
         }
 
-        public Model.Osztalyzat ToModelOsztalyzat(DbOsztalyzat value)
+        public Mark ToModelMark(DbMark value)
         {
 
-            return new Model.Osztalyzat(value.id, value.Ertek, value.DiakId);
+            return new Mark(value.id, value.Value, value.StudentId);
 
         }
 

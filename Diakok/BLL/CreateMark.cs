@@ -7,32 +7,32 @@ using System.Threading.Tasks;
 
 namespace Diakok.BLL
 {
-    public class CreateOsztalyzat
+    public class CreateMark
     {
         private readonly IRepository repository;
-        private const int max_osztalyzat = 5;
+        private const int maxMark = 5;
 
-        public CreateOsztalyzat(IRepository repository)
+        public CreateMark(IRepository repository)
         {
             this.repository = repository;
         }
 
-        public bool AddOsztalyzat(long diakId, int value)
+        public bool AddMark(long studentId, int value)
         {
-            if (value < 1 || value > max_osztalyzat)
+            if (value < 1 || value > maxMark)
             {
                 return false;
             }
             else
             {
-                repository.AddOsztalyzat(diakId, value);
+                repository.AddMark(studentId, value);
                 return true;
             }
         }
 
-        public Diak FindDiakById(long id)
+        public Student FindStudentById(long id)
         {
-            return repository.FindDiak(id);
+            return repository.FindStudent(id);
         }
     }
 }

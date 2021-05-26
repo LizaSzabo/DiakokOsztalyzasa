@@ -27,7 +27,7 @@ namespace Diakok
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<DiakDbContext>(opt => opt.UseInMemoryDatabase(databaseName: "Diakok"));
+            services.AddDbContext<StudentDbContext>(opt => opt.UseInMemoryDatabase(databaseName: "Diakok"));
      
             services.AddScoped<DAL.IRepository, DAL.Repository>();
         

@@ -14,25 +14,25 @@ namespace Diakok.Pages.Diakok
 {
     public class EditModel : PageModel
     {
-        private readonly CreateOsztalyzat createOsztalyzat;
+        private readonly CreateMark createMark;
 
         public EditModel(IRepository repository)
         {
-            createOsztalyzat = new CreateOsztalyzat(repository);
+            createMark = new CreateMark(repository);
         }
 
 
         [BindProperty]
-        public Diak Diak { get; set; }
+        public Student Student { get; set; }
         [BindProperty]
-        public Osztalyzat Osztalyzat { get; set; }
+        public Mark Mark { get; set; }
 
         public IActionResult OnGet(long id)
         {
 
-            Diak = createOsztalyzat.FindDiakById(id);
+            Student = createMark.FindStudentById(id);
 
-            if (Diak == null)
+            if (Student == null)
             {
                 return NotFound();
             }
@@ -46,7 +46,7 @@ namespace Diakok.Pages.Diakok
                 return Page();
             }
 
-            createOsztalyzat.AddOsztalyzat(Diak.DiakID, Osztalyzat.Ertek);
+            createMark.AddMark(Student.StudentID, Mark.Value);
 
 
             return RedirectToPage("./Index");

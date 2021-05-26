@@ -28,20 +28,20 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Statisztika)
+        @foreach (var item in Model.Statistics)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nev)
+                    @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Atlag)
+                    @Html.DisplayFor(modelItem => item.Average)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ElegtelenekSzama)
+                    @Html.DisplayFor(modelItem => item.InsufficientCount)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Legjobb)
+                    @Html.DisplayFor(modelItem => item.BestMark)
                 </td>
                
                

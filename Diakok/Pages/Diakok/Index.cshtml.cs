@@ -13,18 +13,18 @@ namespace Diakok.Pages.Diakok
 {
     public class IndexModel : PageModel
     {
-        private readonly ListDiakok listDiakok;
+        private readonly ListStudents listDiakok;
 
         public IndexModel(IRepository repository)
         {
-            listDiakok = new ListDiakok(repository);
+            listDiakok = new ListStudents(repository);
         }
 
-        public IList<Diak> Diak { get;set; }
+        public IList<Student> Student { get;set; }
 
         public void OnGet()
         {
-            Diak = listDiakok.ListAllStudents();
+            Student = listDiakok.ListAllStudents();
         }
     }
 }

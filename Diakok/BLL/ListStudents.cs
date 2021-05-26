@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace Diakok.BLL
 {
-    public class ListDiakok
+    public class ListStudents
     {
         private readonly IRepository repository;
-        public IList<Diak> Diakok { get; set; }
+        public IList<Student> Students { get; set; }
 
-        public ListDiakok(IRepository repository)
+        public ListStudents(IRepository repository)
         {
             this.repository = repository;
         }
 
-        public IList<Diak> ListAllStudents()
+        public IList<Student> ListAllStudents()
         {
-            Diakok = repository.ListStudents();
-            return Diakok.OrderBy(o => o.Nev).ToList();
+            Students = repository.ListStudents();
+            return Students.OrderBy(o => o.Name).ToList();
         }
 
     }

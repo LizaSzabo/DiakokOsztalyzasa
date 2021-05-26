@@ -21,13 +21,13 @@ namespace Diakok.Pages.Diakok
         }
 
         [BindProperty]
-        public List<DiakStatisztika> Statisztika { get; set; }
+        public List<StudentStatistics> Statistics { get; set; }
 
         public void OnGet()
         {
-            Statisztika = new List<DiakStatisztika>();
-            
-            Statisztika = createStatistics.ListAllStatistics();
+            Statistics = new List<StudentStatistics>();
+
+            Statistics = createStatistics.ListAllStatistics();
         }
     }
 }

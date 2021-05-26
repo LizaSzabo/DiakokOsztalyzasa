@@ -13,11 +13,11 @@ namespace Diakok.Pages.Diakok
 {
     public class CreateModel : PageModel
     {
-        private readonly CreateDiak createDiak;
+        private readonly CreateStudent createStudent;
 
         public CreateModel(IRepository repository)
         {
-            createDiak = new CreateDiak(repository);
+            createStudent = new CreateStudent(repository);
         }
 
         public IActionResult OnGet()
@@ -26,7 +26,7 @@ namespace Diakok.Pages.Diakok
         }
 
         [BindProperty]
-        public Diak Diak { get; set; }
+        public Student Student { get; set; }
 
         public IActionResult OnPost()
         {
@@ -36,7 +36,7 @@ namespace Diakok.Pages.Diakok
                 return Page();
             }
 
-            createDiak.AddDiak(Diak);
+            createStudent.AddStudent(Student);
 
             return RedirectToPage("./Index");
         }

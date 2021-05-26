@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Diakok.BLL
 {
-    public class CreateDiak
+    public class CreateStudent
     {
 
         private readonly IRepository repository;
 
-        public CreateDiak(IRepository repository)
+        public CreateStudent(IRepository repository)
         {
             this.repository = repository;
         }
 
-        public bool AddDiak(Diak diak)
+        public bool AddStudent(Student student)
         {
-            if (diak != null && diak.Nev != null && diak.Nev != "" && diak.Evfolyam > 0)
+            if (student != null && student.Name != null && student.Name != "" && student.Grade > 0)
             {
-                repository.InsertDiak(diak);
+                repository.InsertStudent(student);
                 return true;
             }
             else return false;  
