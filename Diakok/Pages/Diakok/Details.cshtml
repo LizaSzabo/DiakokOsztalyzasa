@@ -9,18 +9,18 @@
 
 
 <table class="table">
-    <thead>
+    <thead class="bg-secondary text-white">
         <tr>
-            <th>
+            <th class="text-center">
                 Név
             </th>
-            <th>
+            <th class="text-center">
                 Átlag
             </th>
-            <th>
+            <th class="text-center">
                 Elégtelen osztályzatok száma
             </th>
-            <th>
+            <th class="text-center">
                 Legjobb osztályzat
             </th>
    
@@ -34,13 +34,13 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Average)
                 </td>
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.InsufficientCount)
                 </td>
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.BestMark)
                 </td>
                

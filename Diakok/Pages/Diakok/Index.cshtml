@@ -14,18 +14,18 @@
     }
 </p>
 <table class="table">
-    <thead>
+    <thead class="bg-secondary text-white">
         <tr>
-            <th>
+            <th class="text-center">
                 Név
             </th>
-            <th>
+            <th class="text-center">
                 Évfolyam
             </th>
-            <th>
+            <th class="text-center">
                 Születési dátum
             </th>
-            <th>
+            <th class="text-center">
                 Telefon
             </th>
             <th></th>
@@ -37,20 +37,20 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.Grade)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.BirthDate)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
-            <td>
+            <td class ="text-center">
                 @if (User.Identity.IsAuthenticated)
                 {<a asp-page="./Edit" asp-route-id="@item.StudentID"><h5>Osztalyzat hozzáadása</h5></a>}
-            </td>
-        </tr>
+                </td>
+</tr>
 }
     </tbody>
 </table>

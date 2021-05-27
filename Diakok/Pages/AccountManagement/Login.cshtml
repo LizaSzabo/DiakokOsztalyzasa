@@ -22,11 +22,6 @@
                 <input asp-for="LoginM.Password" class="form-control" type="password"/>
                 <span asp-validation-for="LoginM.Password" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="LoginM.RememberMe" /> @Html.DisplayNameFor(model => model.LoginM.RememberMe)
-                </label>
-            </div>
             <div class="form-group">
                 <input type="submit" value="Bejelentkezés" class="btn btn-primary" />
             </div>

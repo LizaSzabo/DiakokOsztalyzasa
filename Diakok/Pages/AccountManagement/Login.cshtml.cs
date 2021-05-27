@@ -38,7 +38,7 @@ namespace Diakok.Pages.AccountManagement
             if (ModelState.IsValid)
             {
 
-                var result = await _signInManager.PasswordSignInAsync(LoginM.UserName, LoginM.Password, LoginM.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(LoginM.UserName, LoginM.Password, false, false);
              //   var ok = LoginM.UserName == "admin" && LoginM.Password == "edutest2021";
 
                 if (result.Succeeded)
