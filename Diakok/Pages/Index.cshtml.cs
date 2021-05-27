@@ -36,7 +36,7 @@ namespace Diakok.Pages
             var result = await _userManager.CreateAsync(user, "edutest2021");
             System.Diagnostics.Debug.WriteLine(user.UserName);
 
-            return  RedirectToPage("Diakok/Index");
+            return RedirectToPage("Diakok/Index");
         }
     }
 }
