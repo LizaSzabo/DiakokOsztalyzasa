@@ -177,3 +177,9 @@ C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\
 C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Diakok.dll
 C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Diakok.pdb
 C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Diakok.genruntimeconfig.cache
+C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Liza\Documents\GitHub\DiakokOsztalyzasa\Diakok\obj\Debug\netcoreapp3.1\Razor\Pages\AccountManagement\Login.cshtml.g.cs

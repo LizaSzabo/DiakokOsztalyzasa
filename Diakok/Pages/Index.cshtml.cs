@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +13,30 @@ namespace Diakok.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+
+        public IndexModel(UserManager<IdentityUser> userManager,
+                                      SignInManager<IdentityUser> signInManager, ILogger<IndexModel> logger)
         {
+            _userManager = userManager;
+            _signInManager = signInManager;
             _logger = logger;
-            RedirectToPage(".Diakok/Index");
         }
 
-        public void OnGet()
+        public async Task<IActionResult> OnGet()
         {
+            await _signInManager.SignOutAsync();
 
+            var user = new IdentityUser
+            {
+                UserName = "admin",
+            };
+
+            var result = await _userManager.CreateAsync(user, "edutest2021");
+            System.Diagnostics.Debug.WriteLine(user.UserName);
+
+            return  RedirectToPage("Diakok/Index");
         }
     }
 }

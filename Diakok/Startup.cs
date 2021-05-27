@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Diakok.DAL;
 using Microsoft.Data.Sqlite;
+using Microsoft.AspNetCore.Identity;
 
 namespace Diakok
 {
@@ -28,7 +29,19 @@ namespace Diakok
         {
             services.AddControllers();
             services.AddDbContext<StudentDbContext>(opt => opt.UseInMemoryDatabase(databaseName: "Diakok"));
-     
+
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.User.RequireUniqueEmail = false;
+                options.Password.RequiredLength = 4;
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+       
+            })
+            .AddEntityFrameworkStores<StudentDbContext>()
+            .AddDefaultTokenProviders();
+
             services.AddScoped<DAL.IRepository, DAL.Repository>();
         
 
@@ -54,7 +67,7 @@ namespace Diakok
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

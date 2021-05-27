@@ -1,0 +1,43 @@
+﻿@page
+@model AccountManagement.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Bejelentkezés</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LoginM.UserName" class="control-label">Felhasználó Név:</label>
+                <input asp-for="LoginM.UserName" class="form-control" />
+                <span asp-validation-for="LoginM.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoginM.Password" class="control-label">Jelszó:</label>
+                <input asp-for="LoginM.Password" class="form-control" type="password"/>
+                <span asp-validation-for="LoginM.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="LoginM.RememberMe" /> @Html.DisplayNameFor(model => model.LoginM.RememberMe)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Bejelentkezés" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="/Diakok/Index">Vissza a diákok listájához</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

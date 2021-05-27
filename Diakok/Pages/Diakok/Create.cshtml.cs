@@ -22,7 +22,7 @@ namespace Diakok.Pages.Diakok
 
         public IActionResult OnGet()
         {
-            return Page();
+            return RedirectToPage("../Diakok/Index");
         }
 
         [BindProperty]

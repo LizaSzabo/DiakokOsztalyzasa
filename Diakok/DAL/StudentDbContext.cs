@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,10 +9,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Diakok.Model;
+using Microsoft.AspNetCore.Identity;
 
 namespace Diakok.DAL
 {
-    public class StudentDbContext: DbContext
+    public class StudentDbContext: IdentityDbContext<IdentityUser>
     {
         public StudentDbContext()
           : base()
@@ -19,11 +22,13 @@ namespace Diakok.DAL
           
         }
 
-        public StudentDbContext(DbContextOptions options)
+        public StudentDbContext(DbContextOptions<StudentDbContext> options)
             : base(options)
         {
            
         }
+
+ 
 
 
         public List<DbStudent> GetStudent()
@@ -33,5 +38,6 @@ namespace Diakok.DAL
 
         public DbSet<DbStudent> Students { get; set; }
         public DbSet<DbMark> Marks{ get; set; }
+        public DbSet<IdentityUser> Login { get; set; }
     }
 }
