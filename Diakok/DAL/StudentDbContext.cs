@@ -28,9 +28,6 @@ namespace Diakok.DAL
            
         }
 
- 
-
-
         public List<DbStudent> GetStudent()
         {
             return Students.Local.ToList<DbStudent>();

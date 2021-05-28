@@ -24,7 +24,7 @@ namespace Diakok.Pages.AccountManagement
 
         }
 
-        public async Task<IActionResult> OnGet()
+        public IActionResult OnGet()
         {
             return Page();
         }
@@ -39,7 +39,6 @@ namespace Diakok.Pages.AccountManagement
             {
 
                 var result = await _signInManager.PasswordSignInAsync(LoginM.UserName, LoginM.Password, false, false);
-             //   var ok = LoginM.UserName == "admin" && LoginM.Password == "edutest2021";
 
                 if (result.Succeeded)
                 {

@@ -55,7 +55,7 @@ namespace Diakok.BLL
                     }
                 }
                 if(marksCount > 0)
-                    Statistics.Add(new StudentStatistics(student.Name, (double)marksValue / (double)marksCount, insufficientCount, maxValue));
+                    Statistics.Add(new StudentStatistics(student.Name, Math.Round((double)marksValue / (double)marksCount, 2), insufficientCount, maxValue));
             }
 
             Statistics = Statistics.OrderBy(o => o.Average).ToList();
