@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tG8X+PPmzOMjaEc8dhH8EflUcINQN3vzBNztJsDNmY8yoovAyD6v4F90ehQy7VJESMbUdCfEgXP+GW/nzrUG4g==",
+  "dgSpecHash": "To0F9wtB6nCImZCQQPjkTdpEOYvmwK/+M0Uj6EQdan7UMFRqNEnjyT/fvzdRIU7imNYt3mAM5BzSezC4hIQSIQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Liza\\Documents\\GitHub\\DiakokOsztalyzasa\\Diakok\\Diakok.csproj",
   "expectedPackageFiles": [
@@ -168,8 +168,7 @@
     "C:\\Users\\Liza\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\Liza\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "C:\\Users\\Liza\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\Liza\\.nuget\\packages\\system.text.encodings.web\\5.0.0\\system.text.encodings.web.5.0.0.nupkg.sha512",
-    "C:\\Users\\Liza\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\Liza\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\Liza\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
     "C:\\Users\\Liza\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\Liza\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
